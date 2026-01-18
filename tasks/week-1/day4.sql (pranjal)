@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS users (
+  id INTEGER PRIMARY KEY,
+  name TEXT,
+  email TEXT,
+  age INTEGER
+);
+
+-- Insert records
+INSERT INTO users (name, email, age) VALUES
+('Jetha', 'jetha@gmail.com', 47),
+('Daya', 'daya@yahoo.com', 45),
+('Champak', 'champak@gmail.com', 67);
+
+-- Fetch all users
+SELECT * FROM users;
+
+-- Users with age 18 or above
+SELECT * FROM users
+WHERE age >= 18;
+
+-- Update age (small natural change)
+UPDATE users
+SET age = 48
+WHERE name = 'Jetha';
+
+-- Delete one record
+DELETE FROM users
+WHERE name = 'Daya';
+
+-- Sort users by age (descending)
+SELECT * FROM users
+ORDER BY age DESC;
+
+-- Find users with Gmail accounts
+SELECT * FROM users
+WHERE email LIKE '%@gmail.com';
